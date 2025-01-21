@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: 22.12
 
+      - name: Install Snapcraft
+        uses: samuelmeuli/action-snapcraft@v3
+
       # Fixes temporary file conflicts.
       - name: Clean cache
         run: rm -rf ~/.cache/electron-builder
