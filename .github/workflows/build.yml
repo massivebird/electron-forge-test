@@ -22,7 +22,7 @@ jobs:
       - name: Clean cache
         run: |
           if [ "$RUNNER_OS" = "Windows" ]; then
-            Remove-Item -Path $env:USERPROFILE\.cache\electron-builder -Recurse -Force
+            rm -Force -Recurse -Path $env:USERPROFILE\.cache\electron-builder
           else
             rm -rf ~/.cache/electron-builder
           fi
