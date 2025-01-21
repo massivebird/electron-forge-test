@@ -20,7 +20,7 @@ jobs:
           node-version: 22.12
 
       - name: Clean cache
-        run: rm -r -f ~/.cache/electron-builder
+        run: rm -r --force ~/.cache/electron-builder
 
       - name: Build/release Electron app
         uses: Yan-Jobs/action-electron-builder@v1.7.0
