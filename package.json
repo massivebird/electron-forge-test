@@ -12,7 +12,9 @@
     "lint": "echo \"No linting configured\""
   },
   "build": {
-    "snap": false
+      "linux": {
+         "target": [ "AppImage", "tar.gz" ]
+      }
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.6.0",
