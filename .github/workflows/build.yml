@@ -20,7 +20,13 @@ jobs:
           node-version: 22.12
 
       - name: Clean cache
-        run: rm -Force -r ~/.cache/electron-builder
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then
+            Remove-Item -Path $env:USERPROFILE\.cache\electron-builder -Recurse -Force
+          else
+            rm -rf ~/.cache/electron-builder
+          fi
+        shell: bash
 
       - name: Build/release Electron app
         uses: Yan-Jobs/action-electron-builder@v1.7.0
